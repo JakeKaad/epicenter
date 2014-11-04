@@ -12,7 +12,7 @@ protected
   def after_sign_in_path_for(student)
     if student.has_payment_method
       payments_path
-    elsif student.bank_account.present?
+    elsif student.bank_accounts.first.present?
       edit_verification_path
     else
       payment_method_path
