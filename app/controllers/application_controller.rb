@@ -10,7 +10,7 @@ protected
   end
 
   def after_sign_in_path_for(student)
-    if student.has_payment_method
+    if student.primary_payment_method.present?
       payments_path
     elsif student.bank_accounts.first.present?
       edit_verification_path
