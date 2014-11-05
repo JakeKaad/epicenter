@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_for :users, expect: :registrations
   devise_for :student, expect: :sessions
 
+  resources :payment_methods, except: [:edit, :new]
   resource :bank_account, only: [:new, :create]
   resource :credit_card, only: [:new, :create]
   resource :verification, only: [:edit, :update]
