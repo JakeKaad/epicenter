@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users, expect: :registrations
   devise_for :student, expect: :sessions
 
+  resources :students, only: [:update]
   resources :payment_methods, only: [:index, :new]
   resource :bank_account, only: [:new, :create]
   resource :credit_card, only: [:new, :create]
