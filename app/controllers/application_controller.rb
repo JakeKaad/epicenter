@@ -15,7 +15,7 @@ protected
     elsif student.bank_accounts.first.present?
       edit_verification_path
     else
-      payment_method_path
+      new_payment_method_path
     end
   end
 end
