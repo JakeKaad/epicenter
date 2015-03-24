@@ -31,6 +31,12 @@ feature 'index page' do
       visit companies_path
       click_link company.name
       expect(page).to have_content company.description
+      expect(page).to have_content company.contact_name
+    end
+
+    scenario "it should have an add new company button" do
+      visit companies_path
+      expect(page).to have_content "+ New Company"
     end
   end
 
