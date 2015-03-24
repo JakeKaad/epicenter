@@ -33,6 +33,7 @@ group :test, :development do
   gem 'awesome_print'
   gem 'dotenv-rails'
   gem 'pry'
+  gem 'faker'
 end
 
 group :test do
