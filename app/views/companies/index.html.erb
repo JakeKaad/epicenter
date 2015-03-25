@@ -11,7 +11,7 @@
         <%= link_to 'Delete', company_path(company), method: :delete %>
         </span>
     </li>
-    <% unless company == Company.last %>
+    <% unless company.last_company? %>
       <hr>
     <% end %>
   <% end %>
