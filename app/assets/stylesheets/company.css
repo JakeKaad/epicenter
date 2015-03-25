@@ -10,3 +10,7 @@
 .unstyled-link {
   text-decoration: none;
 }
+
+.form-group {
+  width: 50em;
+}

@@ -1,28 +1,45 @@
 <%= form_for @company do |f| %>
-  <%= f.label :name, "Company Name" %>
-  <%= f.text_field :name %>
+  <div class='form-group'>
+    <%= f.label :name, "Company Name" %>
+    <%= f.text_field :name %>
+  </div>
 
-  <%= f.label :description %>
-  <%= f.text_area :description %>
+  <div class='form-group'>
+    <%= f.label :description %>
+    <%= f.text_area :description, rows: 5, style: "width: 50em" %>
+  </div>
 
-  <%= f.label :website %>
-  <%= f.text_field :website %>
+  <div class='form-group'>
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+  </div>
 
-  <%= f.label :address %>
-  <%= f.text_field :address %>
+  <div class='form-group'>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
 
   <h5>Contact</h5>
-  <%= f.label :contact_name, "Name" %>
-  <%= f.text_field :contact_name %>
 
-  <%= f.label :contact_title, "Title" %>
-  <%= f.text_field :contact_title %>
+  <div class='form-group'>
+    <%= f.label :contact_name, "Name" %>
+    <%= f.text_field :contact_name %>
+  </div>
 
-  <%= f.label :contact_phone, "Phone Number" %>
-  <%= f.text_field :contact_phone %>
+  <div class='form-group'>
+    <%= f.label :contact_title, "Title" %>
+    <%= f.text_field :contact_title %>
+  </div>
 
-  <%= f.label :contact_email, "Email" %>
-  <%= f.email_field :contact_email %>
+  <div class='form-group'>
+    <%= f.label :contact_phone, "Phone Number" %>
+    <%= f.text_field :contact_phone %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :contact_email, "Email" %>
+    <%= f.email_field :contact_email %>
+  </div>
 
   <%= f.submit %>
 <% end %>
