@@ -3,6 +3,8 @@ describe Internship do
   it { should belong_to :cohort }
   it { should validate_presence_of :description }
   it { should validate_presence_of :ideal_intern }
+  it { should validate_presence_of :cohort_id }
+  it { should validate_presence_of :company_id }
 
 
 end
