@@ -3,7 +3,7 @@ class Internship < ActiveRecord::Base
   belongs_to :cohort
   validates_presence_of :description, :ideal_intern, :company_id, :cohort_id
 
-  delegate :name, to: :company
+  delegate :name, to: :company, prefix: :company
 
   def last_internship?
     self == self.cohort.internships.last

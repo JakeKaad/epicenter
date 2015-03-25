@@ -1,10 +1,10 @@
-<h3>Partner Companies</h3>
+<h3>Internships</h3>
 <hr/>
 
 <ul class="company-list">
   <% @internships.each do |internship| %>
     <li>
-      <%= link_to internship.name, cohort_internship_path(internship.cohort, internship) %>
+      <%= link_to internship.company_name, cohort_internship_path(internship.cohort, internship) %>
       <span class='update-company'>
         <%= link_to 'Edit', edit_cohort_internship_path(internship.cohort, internship) %>
         <%= spacer %>
