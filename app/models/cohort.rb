@@ -6,6 +6,7 @@ class Cohort < ActiveRecord::Base
   has_many :students
   has_many :attendance_records, through: :students
   has_many :assessments
+  has_many :internships
 
   attr_accessor :importing_cohort_id
 
