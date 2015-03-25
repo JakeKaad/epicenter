@@ -1,0 +1,28 @@
+<%= form_for @company do |f| %>
+  <%= f.label :name, "Company Name" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.label :website %>
+  <%= f.text_field :website %>
+
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+
+  <h5>Contact</h5>
+  <%= f.label :contact_name, "Name" %>
+  <%= f.text_field :contact_name %>
+
+  <%= f.label :contact_title, "Title" %>
+  <%= f.text_field :contact_title %>
+
+  <%= f.label :contact_phone, "Phone Number" %>
+  <%= f.text_field :contact_phone %>
+
+  <%= f.label :contact_email, "Email" %>
+  <%= f.email_field :contact_email %>
+
+  <%= f.submit %>
+<% end %>
