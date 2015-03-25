@@ -229,4 +229,13 @@ FactoryGirl.define do
     contact_email   'test@company.com'
     contact_title   'mentor'
   end
+
+  factory :internship do
+    company
+    cohort
+    sequence(:description) { |n| "You will do stuff here. #{n}" }
+    ideal_intern 'Somebody who does stuff.'
+    clearance_required true
+    clearance_description "You need stuff."
+  end
 end

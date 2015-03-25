@@ -1,0 +1,19 @@
+<h3>Partner Companies</h3>
+<hr/>
+
+<ul class="company-list">
+  <% @internships.each do |internship| %>
+    <li>
+      <%= link_to internship.name, cohort_internship_path(internship.cohort, internship) %>
+      <span class='update-company'>
+        <%= link_to 'Edit', edit_cohort_internship_path(internship.cohort, internship) %>
+        <%= spacer %>
+        <%= link_to 'Delete', cohort_internship_path(internship.cohort, internship), method: :delete %>
+        </span>
+    </li>
+    <% unless internship.last_internship? %>
+      <hr>
+    <% end %>
+  <% end %>
+</ul>
+<hr>

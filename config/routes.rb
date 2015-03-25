@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :cohorts, except: [:show, :index] do
     resources :attendance_statistics, only: [:index]
     resources :assessments, only: [:index]
-    resources :internships, only: [:index]
+    resources :internships, only: [:index, :show, :edit, :destroy]
   end
   resources :companies
 
