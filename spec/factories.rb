@@ -229,6 +229,7 @@ FactoryGirl.define do
     contact_email   'test@company.com'
     contact_title   'mentor'
   end
+<<<<<<< HEAD
 
   factory :internship do
     company
@@ -238,4 +239,6 @@ FactoryGirl.define do
     clearance_required true
     clearance_description "You need stuff."
   end
+=======
+>>>>>>> ac36d2c6e16a79134f95c36d0cc757bf8f7c4911
 end

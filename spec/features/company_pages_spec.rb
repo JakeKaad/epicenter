@@ -120,6 +120,10 @@ feature "deleting a company" do
   let(:admin) { FactoryGirl.create(:admin) }
   let!(:company) { FactoryGirl.create(:company) }
   before { login_as(admin, scope: :admin) }
+<<<<<<< HEAD
+=======
+
+>>>>>>> ac36d2c6e16a79134f95c36d0cc757bf8f7c4911
   context "as an admin" do
     scenario "it removes company from database" do
       visit companies_path
@@ -128,5 +132,16 @@ feature "deleting a company" do
       expect(page).to_not have_content company.name
     end
   end
+<<<<<<< HEAD
+=======
+
+  context "not an admin" do
+    let!(:company) { FactoryGirl.create(:company) }
+
+    it_behaves_like "require admin login" do
+      let(:action) { page.driver.submit :delete, "/companies/#{company.id}", {} }
+    end
+  end
+>>>>>>> ac36d2c6e16a79134f95c36d0cc757bf8f7c4911
 end
 

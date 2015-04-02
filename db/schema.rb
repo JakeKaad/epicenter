@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150325182531) do
+=======
+ActiveRecord::Schema.define(version: 20150325190112) do
+>>>>>>> ac36d2c6e16a79134f95c36d0cc757bf8f7c4911
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +47,8 @@ ActiveRecord::Schema.define(version: 20150325182531) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "cohorts", ["start_date"], name: "index_cohorts_on_start_date", using: :btree
 
   create_table "companies", force: true do |t|
     t.string "name"
