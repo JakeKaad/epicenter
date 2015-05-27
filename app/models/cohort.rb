@@ -7,7 +7,7 @@ class Cohort < ActiveRecord::Base
   has_many :students
   has_many :attendance_records, through: :students
   has_many :code_reviews
-  has_many :internships
+  has_many :internships, -> {  joins(:company).order("name") }
 
   attr_accessor :importing_cohort_id
 
@@ -36,12 +36,16 @@ class Cohort < ActiveRecord::Base
   end
 
   def internships_sorted_by_interest(current_student)
-    internships.sort_by do |internship|
-      rating = current_student.find_rating(internship)
-      if rating
-        rating.interest
-      else
-        '0'
+    unless current_student
+      internships
+    else
+      internships.sort_by do |internship|
+        rating = current_student.find_rating(internship)
+        if rating
+          rating.interest
+        else
+          '0'
+        end
       end
     end
   end

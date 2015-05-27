@@ -113,4 +113,19 @@ describe Cohort do
       expect(cohort.internships_sorted_by_interest(student)).to eq([internship_three, internship_one, internship_two])
     end
   end
+
+  describe 'internships are sorted by company name by default' do
+    let(:cohort) { FactoryGirl.create(:cohort) }
+    let(:company) { FactoryGirl.create(:company, name: "z labs") }
+    let(:company_two) { FactoryGirl.create(:company, name: "a labs") }
+    let(:company_three) { FactoryGirl.create(:company, name: 'k labs') }
+
+    let!(:internship) { FactoryGirl.create(:internship, company: company, cohort: cohort) }
+    let!(:internship_two) { FactoryGirl.create(:internship, company: company_two, cohort: cohort) }
+    let!(:internship_three) { FactoryGirl.create(:internship, company: company_three, cohort: cohort) }
+
+    it 'should be organized alphabetically by company name' do
+      expect(cohort.internships).to eq [internship_two, internship_three, internship]
+    end
+  end
 end
